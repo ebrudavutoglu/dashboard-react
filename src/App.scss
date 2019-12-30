@@ -1,0 +1,22 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+//Plugins
+@import '../node_modules/@fullcalendar/core/main.css';
+/* @import '../node_modules/@fullcalendar/daygrid/main.css';
+@import 'node_modules/@fullcalendar/timegrid/main.css'; */
+@import '../node_modules/@fullcalendar/daygrid/main.css';
+@import "../node_modules/@fullcalendar/timegrid/main.css";
+
+
+@import "./sass/base/fonts";
+@import "./sass/base/color";
+@import "./sass/base/variables";
+
+//Components
+@import "./sass/components/dropdownMenu";
+@import "./sass//components/AdminNavbar.scss";
+@import "./sass/components/sidebar";
+@import "./sass/components/calendar";
+
+//Pages
+@import "./sass/pages/page";

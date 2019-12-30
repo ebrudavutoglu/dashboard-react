@@ -1,0 +1,127 @@
+.dropdown{
+    .btn-group{
+        button{
+            i{
+                font-size: 24px;
+            }
+            .badge{
+                position: absolute;
+                top: 15px;
+                right: 10px;
+                border-radius: 100%;
+                width: 15px;
+                height: 15px;
+                font-size: 10px;
+                padding: 2px;
+            }
+            .dropdown-profile{
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                overflow: hidden;
+                img{
+                    height: 100%;
+                }
+            }
+            .flag{
+                img{
+                    height: 12px;
+                    margin-right: 10px;
+                }
+            }
+        }
+        .dropdown-menu{
+            background-color: lighten($componentColor, 3%);
+            left: inherit !important;
+            right: 0;
+            transform: translate3d(0px, 0px, 0px) !important;
+            top: 63px !important;
+            color: $textColor;
+            &:after{
+                content: '';
+                position: absolute;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid lighten($componentColor, 3%);
+                border-top: 10px solid transparent;
+                border-left: 10px solid transparent;
+                top: -19px;
+                right: 10px;
+            }
+            a{
+                color: $textColor;
+                i{
+                    margin-right: 10px;
+                }
+                &:hover{
+                    background-color: lighten($componentColor, 5%);
+                }
+            }
+        }
+    }
+}
+.notification-list{
+    .app-search{
+        position: relative;
+        display: table;
+        height: 70px;
+        .form-group{
+            display: table-cell;
+            vertical-align: middle;
+            position: relative;
+            .form-control{
+                border-radius: 100px;
+                border: 0;
+                background-color: lighten($componentColor, 10%);   
+            }
+            button{
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                border: 0;
+                background-color: transparent;
+                transform: translateY(-50%);
+                color:$textColor;
+            }
+        }
+    }
+    .notification-menu{
+        width: 300px;
+        .notify-item{
+            float: left;
+            width: 100%;
+            padding: 10px;
+            .notify-icon{
+                height: 36px;
+                width: 36px;
+                line-height: 36px;
+                text-align: center;
+                border-radius: 50%;
+                margin-right: 6px;
+                color: $textColor;
+                display: block;
+                float: left;
+            }
+            .notify-details{
+                margin-bottom: 0;
+                font-weight: 600;  
+                width: calc(100% - 46px);
+                float: left;
+                font-size: 14px;
+                color:$textColor;
+                span{
+                    width: 100%;
+                    float: left;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }   
+            }
+            &:nth-child(odd){
+                background-color: $componentColor;
+            }
+            &:hover{
+                background-color: darken($componentColor, 5%);
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.content-page{
+    margin-left: 240px;
+    overflow: hidden;
+    color: $textColor;
+    
+    .content{
+        padding: 0 15px 10px 15px;
+        margin-bottom: 60px;
+        .page-title-box{
+            padding: 10px 0;
+            .page-title{
+                color: lighten($textColor, 100%);
+                margin-bottom:0;
+            }
+            .breadcrumb{
+                padding: 4px 0;
+                background-color: transparent;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
