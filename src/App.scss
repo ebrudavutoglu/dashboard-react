@@ -2,12 +2,12 @@
 
 //Plugins
 @import '../node_modules/@fullcalendar/core/main.css';
-/* @import '../node_modules/@fullcalendar/daygrid/main.css';
-@import 'node_modules/@fullcalendar/timegrid/main.css'; */
 @import '../node_modules/@fullcalendar/daygrid/main.css';
 @import "../node_modules/@fullcalendar/timegrid/main.css";
+@import "../node_modules/@trendmicro/react-sidenav/dist/react-sidenav.min.css";
+@import "../node_modules/slick-carousel/slick/slick.scss";
 
-
+//Base
 @import "./sass/base/fonts";
 @import "./sass/base/color";
 @import "./sass/base/variables";
@@ -17,6 +17,11 @@
 @import "./sass//components/AdminNavbar.scss";
 @import "./sass/components/sidebar";
 @import "./sass/components/calendar";
+@import "./sass/components/card";
+@import "./sass/components/alert";
+@import "./sass/components/bg";
+@import "./sass/components/buttons";
+@import "./sass/components/carousel";
 
 //Pages
 @import "./sass/pages/page";

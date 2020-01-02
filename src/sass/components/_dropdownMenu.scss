@@ -1,61 +1,74 @@
 .dropdown{
-    .btn-group{
-        button{
-            i{
-                font-size: 24px;
-            }
-            .badge{
-                position: absolute;
-                top: 15px;
-                right: 10px;
-                border-radius: 100%;
-                width: 15px;
-                height: 15px;
-                font-size: 10px;
-                padding: 2px;
-            }
-            .dropdown-profile{
-                width: 50px;
-                height: 50px;
-                border-radius: 100%;
-                overflow: hidden;
-                img{
-                    height: 100%;
-                }
-            }
-            .flag{
-                img{
-                    height: 12px;
-                    margin-right: 10px;
-                }
+    .dropdown-toggle{
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 19px 10px;
+        position: relative;
+        margin: 0;
+        &:focus{
+            outline: 0px;
+            box-shadow: 0px;
+        }
+        i{
+            font-size: 24px;
+        }
+        .badge{
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            border-radius: 100%;
+            width: 15px;
+            height: 15px;
+            font-size: 10px;
+            padding: 2px;
+        }
+        .dropdown-profile{
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            overflow: hidden;
+            img{
+                height: 100%;
             }
         }
-        .dropdown-menu{
-            background-color: lighten($componentColor, 3%);
-            left: inherit !important;
-            right: 0;
-            transform: translate3d(0px, 0px, 0px) !important;
-            top: 63px !important;
+        .flag{
+            img{
+                height: 12px;
+                margin-right: 10px;
+            }
+        }
+    }
+    .dropdown-menu{
+        background-color: lighten($componentColor, 3%);
+        left: inherit !important;
+        right: 0;
+        transform: translate3d(0px, 0px, 0px) !important;
+        top: 63px !important;
+        color: $textColor;
+        &:after{
+            content: '';
+            position: absolute;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid lighten($componentColor, 3%);
+            border-top: 10px solid transparent;
+            border-left: 10px solid transparent;
+            top: -19px;
+            right: 10px;
+        }
+        a{
             color: $textColor;
-            &:after{
-                content: '';
-                position: absolute;
-                border-right: 10px solid transparent;
-                border-bottom: 10px solid lighten($componentColor, 3%);
-                border-top: 10px solid transparent;
-                border-left: 10px solid transparent;
-                top: -19px;
-                right: 10px;
+            i{
+                margin-right: 10px;
             }
-            a{
-                color: $textColor;
-                i{
-                    margin-right: 10px;
-                }
-                &:hover{
-                    background-color: lighten($componentColor, 5%);
-                }
+            &:hover{
+                background-color: lighten($componentColor, 5%);
             }
+        }
+    }
+    &.show{
+        .dropdown-toggle{
+            background-color: $componentColor;
         }
     }
 }
@@ -121,6 +134,14 @@
             }
             &:hover{
                 background-color: darken($componentColor, 5%);
+            }
+        }
+    }
+    &.profile-dropdown{
+        .dropdown-toggle{
+            padding: 10px;
+            &:after{
+                display: none;
             }
         }
     }

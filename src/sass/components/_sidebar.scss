@@ -15,6 +15,7 @@
             color: $textColor;
             position: relative;
             float: left;
+            text-align: left;
             i{
                 margin-right: 15px;
             }
@@ -49,12 +50,26 @@
                     width: 100%;
                     float: left;
                     color: $textColor;
-                    padding-left: 50px;
+                    padding-left: 60px;
                     margin-bottom: 10px;
                     font-size: 14px;
+                    position: relative;
+
                     &:hover{
                         color: white;
                         text-decoration: none;
+                    }
+                    &:before{
+                        content: '';
+                        width: 3px;
+                        height: 3px;
+                        background-color: $textColor;
+                        float: left;
+                        position: absolute;
+                        top: 50%;
+                        left: 50px;
+                        transform: translateY(-50%);
+                        border-radius: 100%;
                     }
                 }
             }

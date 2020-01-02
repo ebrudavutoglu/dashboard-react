@@ -1,36 +1,15 @@
 import React from "react";
 import classNames from "classnames";
 import {Link} from "react-router-dom"
-import {DropdownToggle, DropdownMenu, DropdownItem, Navbar, ButtonDropdown, Badge} from "reactstrap";
+import {Dropdown,  Navbar, Badge} from "react-bootstrap";
 
 class AdminNavbar extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            natificationOpen:false,
-            langOpen:false,
-            profileOpen:false,
-            color:'navbar-transparent'
         }
-        this.langToggle = this.langToggle.bind(this);
-        this.natToggle = this.natToggle.bind(this);
-        this.profileToggle = this.profileToggle.bind(this);
     }
-    langToggle(){
-        this.setState({
-            langOpen: !this.state.langOpen
-        })
-    }
-    natToggle(){
-        this.setState({
-            natificationOpen: !this.state.natificationOpen
-        })
-    }
-    profileToggle(){
-        this.setState({
-            profileOpen: !this.state.profileOpen
-        })
-    }
+    
     render(){
         return(
             <Navbar className={classNames("navbar-absolute", this.state.color)}>
@@ -54,36 +33,33 @@ class AdminNavbar extends React.Component{
                                     </div>
                                 </form>
                             </li>
-                            <li className="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                                <ButtonDropdown isOpen={this.state.langOpen} toggle={this.langToggle}>
-                                    <DropdownToggle>
-                                        <div className="flag">
-                                            <img src="/assets/img/flags/en.jpg" alt=""/>
-                                            English
-                                        </div>
-                                    </DropdownToggle>
-                                    <DropdownMenu>
+                            <li className="notification-list list-inline-item d-none d-md-inline-block language-dropdown">
+                                <Dropdown >
+                                    <Dropdown.Toggle>
+                                        Language
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
                                         
-                                        <DropdownItem>
+                                        <Dropdown.Item>
                                             <img src="/assets/img/flags/en.jpg" alt=""/>
                                             <span>English</span>
-                                        </DropdownItem>
-                                        <DropdownItem>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item>
                                             <img src="/assets/img/flags/en.jpg" alt=""/>
                                             <span>Turkish</span>
-                                        </DropdownItem>
-                                    </DropdownMenu>
-                                </ButtonDropdown>
+                                        </Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                             </li>
-                            <li className="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                                <ButtonDropdown isOpen={this.state.natificationOpen} toggle={this.natToggle}>
-                                    <DropdownToggle>
+                            <li className="notification-list list-inline-item d-none d-md-inline-block">
+                                <Dropdown>
+                                    <Dropdown.Toggle>
                                         <i className="icon-notifications_none"></i>
-                                        <Badge color="danger">1</Badge>
-                                    </DropdownToggle>
-                                    <DropdownMenu className="notification-menu">
-                                        <DropdownItem header>Natification (7)</DropdownItem>
-                                        <DropdownItem divider/>
+                                        <Badge variant="danger">1</Badge>
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu className="notification-menu">
+                                        <Dropdown.Item header>Natification (7)</Dropdown.Item>
+                                        <Dropdown.Item divider/>
                                         <Link to="/" className="dropdown-item notify-item">
                                             <div className="notify-icon bg-success">
                                                 <i className="icon-message"></i>
@@ -111,25 +87,25 @@ class AdminNavbar extends React.Component{
                                                 <span className="text-muted">Dummy text of the printing and typesetting industry.</span>
                                             </p>
                                         </Link>
-                                    </DropdownMenu>
-                                </ButtonDropdown>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                             </li>
-                            <li className="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                                <ButtonDropdown isOpen={this.state.profileOpen} toggle={this.profileToggle}>
-                                    <DropdownToggle>
+                            <li className="notification-list list-inline-item d-none d-md-inline-block profile-dropdown">
+                                <Dropdown>
+                                    <Dropdown.Toggle>
                                         <div className="dropdown-profile">
                                             <img src="http://placehold.it/200X200" alt=""/>
                                         </div>
-                                    </DropdownToggle>
-                                    <DropdownMenu className="profile-menu">
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu className="profile-menu">
                                         <Link to="/" className="dropdown-item notify-item"><i className="icon-user2"></i>Profile</Link>
                                         <Link to="/" className="dropdown-item notify-item"><i className="icon-account_balance_wallet"></i>My Wallet</Link>
                                         <Link to="/" className="dropdown-item notify-item"><i className="icon-settings"></i>Settings</Link>
                                         <Link to="/" className="dropdown-item notify-item"><i className="icon-unlock"></i>Lockscreen</Link>
-                                        <DropdownItem divider/>
+                                        <Dropdown.Item divider/>
                                         <Link to="/" className="dropdown-item notify-item text-danger"><i className="icon-power-off"></i>Log Out</Link>
-                                    </DropdownMenu>
-                                </ButtonDropdown>
+                                    </Dropdown.Menu>
+                                </Dropdown>
                             </li>
                         </ul>
                     </div>

@@ -1,0 +1,66 @@
+.alert{
+    &-success{
+        background-color: rgba($success,.2);
+        border: 0;
+        color: $success;
+        .alert-link{
+            color: darken($success, 10%);
+        }
+    }
+    &-info{
+        background-color: rgba($info,.2);
+        border: 0;
+        color: $info;
+        .alert-link{
+            color: darken($info, 10%);
+        }
+    }
+    &-primary{
+        background-color: rgba($primary,.2);
+        border: 0;
+        color: $primary;
+        .alert-link{
+            color: darken($primary, 10%);
+        }
+    }
+    &-secondary{
+        background-color: rgba($secondary,.2);
+        border: 0;
+        color: $secondary;
+        .alert-link{
+            color: darken($secondary, 10%);
+        }
+    }
+    &-warning{
+        background-color: rgba($warning,.2);
+        border: 0;
+        color: $warning;
+        .alert-link{
+            color: darken($warning, 10%);
+        }
+    }
+    &-danger{
+        background-color: rgba($danger,.2);
+        border: 0;
+        color: $danger;
+        .alert-link{
+            color: darken($danger, 10%);
+        }
+    }
+    &-light{
+        background-color: rgba($light,.2);
+        border: 0;
+        color: $light;
+        .alert-link{
+            color: darken($light, 10%);
+        }
+    }
+    &-dark{
+        background-color: rgba($dark,.2);
+        border: 0;
+        color: $dark;
+        .alert-link{
+            color: darken($dark, 10%);
+        }
+    }
+}

@@ -24,7 +24,12 @@
             background-color: lighten($componentColor, 5%);
             .notification-list{
                 float: left;
-                
+                &.language-dropdown{
+                    img{
+                        height: 15px;
+                        margin-right: 10px;
+                    }
+                }
                 .btn-group{
                     height: 70px;
                     button{

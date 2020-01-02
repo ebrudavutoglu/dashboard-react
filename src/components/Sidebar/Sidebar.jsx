@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {PropTypes} from 'prop-types';
-import {Card, CardHeader, Collapse, CardBody, Button} from 'reactstrap';
+import {Accordion, Card, Button} from 'react-bootstrap';
+
 
 class Sidebar extends React.Component{
     // eslint-disable-next-line no-useless-constructor
@@ -22,41 +23,40 @@ class Sidebar extends React.Component{
         return(
             <div className="sidebar">
                 <div className="sidebar-menu">
+                    <Accordion defaultActiveKey="0">
                     {
                         routes.map((prop, key) => {
                             if(!prop.path){
                                 return (
-                                    <Card key={key}>
-                                        <Button onClick={this.toggleSidebar} data-event={prop.name} className="sidebar-menu-item"><i className={prop.icon}></i> {prop.name}</Button>
-                                        <Collapse isOpen={this.state.isOpen}>
-                                            <CardBody>
+                                    <Card key={key} {...{className:`accordion-item, ${this.state.isOpen && 'accordion-item--opened'}`, onClick:this.toggleSidebar}}>
+                                        <Accordion.Toggle as={Button} variant="link" eventKey={prop.name}  className="sidebar-menu-item"><i className={prop.icon}></i> {prop.name}</Accordion.Toggle>
+                                        <Accordion.Collapse eventKey={prop.name}>
+                                            <Card.Body>
                                                 {
                                                     prop.submenu.map((menu, key) =>
                                                         <Link to={menu.layout + menu.path} key={key}>{menu.name}</Link>
                                                     )
                                                 }
-                                            </CardBody>
-                                        </Collapse>
+                                            </Card.Body>
+                                        </Accordion.Collapse>
                                     </Card>
                                 )
                             }else{
                                 return(
                                     <Card key={key}>
-                                        <CardHeader onClick={this.toggle} data-event={prop.name} className="sidebar-menu-item"><Link key={prop.name} to={prop.layout + prop.path}><i className={prop.icon}></i> {prop.name}</Link></CardHeader>
+                                        <Card.Header 
+                                        onClick={this.toggle} 
+                                        data-event={prop.name} 
+                                        className="sidebar-menu-item">
+                                            <Link key={prop.name} to={prop.layout + prop.path}><i className={prop.icon}></i> {prop.name}</Link>
+                                        </Card.Header>
                                     </Card>
-                                   /*  <Link key={prop.name} to={prop.layout + prop.path} className="sidebar-menu-item">
-                                        <i className={prop.icon}></i>
-                                        <span>{prop.name}</span>
-                                        <Badge color="info">{prop.badge}</Badge>
-                                    </Link> */
                                 )
                             }
-                            /* if(prop.redirect) return null;
-                            return(
-                                    
-                            ) */
                         })
                     }
+                    </Accordion>
+                    
                 </div>
             </div>
         )

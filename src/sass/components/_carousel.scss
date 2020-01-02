@@ -1,0 +1,51 @@
+.slick-slider{
+    position: relative;
+    .slick-arrow{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 100px;
+        background-color: #9ca8b3;
+        z-index: 1;
+        color: #FFF;
+        width: 40px;
+        text-align: center;
+        height: 40px;
+        padding: 8px;
+        cursor: pointer;
+        &.slick-prev{
+            left: 10px;
+        }
+        &.slick-next{
+            right: 10px;
+        }
+    }
+    .slick-list{
+        .slick-slide{
+
+        }
+    }
+    .slick-dots{
+        position: absolute;
+        bottom: 10px;
+        text-align: center;
+        width: 100%;
+        li{
+            display: inline-block;
+            button{
+                border-radius: 100px;
+                background-color: rgba($textColor, 2%);
+                width: 20px;
+                height: 20px;
+                font-size: 11px;
+                text-align: center;
+            }
+            &.slick-active{
+                button{
+                    background-color: $componentColor;
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.bg{
+    &-success{
+        background-color: $success;
+        border: 0;
+        color: $white;
+        .alert-link{
+            color: $white
+        }
+    }
+    &-info{
+        background-color: $info;
+        border: 0;
+        color: $white;
+        .alert-link{
+            color: $info
+        }
+    }
+    &-primary{
+        background-color: $primary;
+        border: 0;
+        color: $white;
+        .alert-link{
+            color: $primary;
+        }
+    }
+    &-secondary{
+        background-color: $secondary;
+        border: 0;
+        color: $white;
+        .alert-link{
+            color: $secondary;
+        }
+    }
+    &-warning{
+        background-color: $warning;
+        border: 0;
+        color: $white;
+        .alert-link{
+            color: $warning;
+        }
+    }
+    &-danger{
+        background-color: $danger;
+        border: 0;
+        color: $white;
+        .alert-link{
+            color: $danger
+        }
+    }
+    &-light{
+        background-color: $light;
+        border: 0;
+        color: $black;
+        .alert-link{
+            color: $light;
+        }
+    }
+    &-dark{
+        background-color: $dark;
+        border: 0;
+        color: $white;
+        .alert-link{
+            color: $dark;
+        }
+    }
+}
